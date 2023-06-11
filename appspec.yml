@@ -4,6 +4,9 @@ files:
   - source: /
     destination: /var/www/html
     overwrite: true
+  - source: /hms-db-load-script.sql
+    destination: /tmp/
+    overwrite: true
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
@@ -16,6 +19,9 @@ hooks:
     - location: scripts/enable_server.sh
       timeout: 30
       runas: root
+    - location: scripts/load_db.sh
+      timeout: 60
+      runas: root      
   ApplicationStop:
     - location: scripts/stop_server.sh
       timeout: 30
