@@ -1,5 +1,5 @@
 USE hms;
-CREATE TABLE `admin` (
+CREATE TABLE IF NOT EXISTS `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -10,7 +10,7 @@ INSERT INTO `admin` (`id`, `username`, `password`, `updationDate`) VALUES
 (1, 'admin', 'Test@12345', '30-10-2022 11:42:05 AM');
 
 
-CREATE TABLE `appointment` (
+CREATE TABLE IF NOT EXISTS `appointment` (
   `id` int(11) NOT NULL,
   `doctorSpecialization` varchar(255) DEFAULT NULL,
   `doctorId` int(11) DEFAULT NULL,
@@ -25,7 +25,7 @@ CREATE TABLE `appointment` (
 INSERT INTO `appointment` (`id`, `doctorSpecialization`, `doctorId`, `userId`, `consultancyFees`, `appointmentDate`, `appointmentTime`, `userStatus`, `doctorStatus`) VALUES
 (1, 'ENT', 1, 1, 500, '2022-11-10', '12:45 PM', 1, 0);
 
-CREATE TABLE `doctors` (
+CREATE TABLE IF NOT EXISTS `doctors` (
   `id` int(11) NOT NULL,
   `specilization` varchar(255) DEFAULT NULL,
   `doctorName` varchar(255) DEFAULT NULL,
@@ -39,7 +39,7 @@ CREATE TABLE `doctors` (
 INSERT INTO `doctors` (`id`, `specilization`, `doctorName`, `address`, `docFees`, `contactno`, `docEmail`, `password`) VALUES
 (1, 'ENT', 'Anuj kumar', 'A 123 XYZ Apartment Raj Nagar Ext Ghaziabad', '500', 142536250, 'anujk123@test.com', 'f925916e2754e5e03f75dd58a5733251');
 
-CREATE TABLE `doctorslog` (
+CREATE TABLE IF NOT EXISTS `doctorslog` (
   `id` int(11) NOT NULL,
   `uid` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
@@ -54,7 +54,7 @@ INSERT INTO `doctorslog` (`id`, `uid`, `username`, `userip`, `logout`, `status`)
 (26, 1, 'anujk123@test.com', 0x3a3a3100000000000000000000000000, '06-11-2022 06:50:28 PM', 1);
 
 
-CREATE TABLE `doctorspecilization` (
+CREATE TABLE IF NOT EXISTS `doctorspecilization` (
   `id` int(11) NOT NULL,
   `specilization` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -77,7 +77,7 @@ INSERT INTO `doctorspecilization` (`id`, `specilization`) VALUES
 (14, 'Endocrinologists'),
 (15, 'Neurologists');
 
-CREATE TABLE `tblcontactus` (
+CREATE TABLE IF NOT EXISTS `tblcontactus` (
   `id` int(11) NOT NULL,
   `fullname` varchar(255) DEFAULT NULL,
   `email` varchar(255) DEFAULT NULL,
@@ -91,7 +91,7 @@ INSERT INTO `tblcontactus` (`id`, `fullname`, `email`, `contactno`, `message`, `
 (1, 'Anuj kumar', 'anujk30@test.com', 1425362514, 'This is for testing purposes.   This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.This is for testing purposes.', NULL, NULL);
 
 
-CREATE TABLE `tblmedicalhistory` (
+CREATE TABLE IF NOT EXISTS `tblmedicalhistory` (
   `ID` int(10) NOT NULL,
   `PatientID` int(10) DEFAULT NULL,
   `BloodPressure` varchar(200) DEFAULT NULL,
@@ -105,7 +105,7 @@ INSERT INTO `tblmedicalhistory` (`ID`, `PatientID`, `BloodPressure`, `BloodSugar
 (1, 1, '80/120', '120', '85', '98', 'Test');
 
 
-CREATE TABLE `tblpage` (
+CREATE TABLE IF NOT EXISTS `tblpage` (
   `ID` int(10) NOT NULL,
   `PageType` varchar(200) DEFAULT NULL,
   `PageTitle` varchar(200) DEFAULT NULL,
@@ -121,7 +121,7 @@ INSERT INTO `tblpage` (`ID`, `PageType`, `PageTitle`, `PageDescription`, `Email`
 (2, 'contactus', 'Contact Details', 'D-204, Hole Town South West, Delhi-110096,India', 'info@gmail.com', 1122334455, '9 am To 8 Pm');
 
 
-CREATE TABLE `tblpatient` (
+CREATE TABLE IF NOT EXISTS `tblpatient` (
   `ID` int(10) NOT NULL,
   `Docid` int(10) DEFAULT NULL,
   `PatientName` varchar(200) DEFAULT NULL,
@@ -137,7 +137,7 @@ INSERT INTO `tblpatient` (`ID`, `Docid`, `PatientName`, `PatientContno`, `Patien
 (1, 1, 'Amit Kumar', 1231231230, 'amitk@gmail.com', 'male', 'New Delhi india', 35, 'NA', );
 
 
-CREATE TABLE `userlog` (
+CREATE TABLE IF NOT EXISTS `userlog` (
   `id` int(11) NOT NULL,
   `uid` int(11) DEFAULT NULL,
   `username` varchar(255) DEFAULT NULL,
@@ -151,7 +151,7 @@ INSERT INTO `userlog` (`id`, `uid`, `username`, `userip`, `logout`, `status`) VA
 (1, 1, 'johndoe12@test.com', 0x3a3a3100000000000000000000000000, NULL, 1);
 
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS `users` (
   `id` int(11) NOT NULL,
   `fullName` varchar(255) DEFAULT NULL,
   `address` longtext DEFAULT NULL,
