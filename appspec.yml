@@ -7,14 +7,6 @@ files:
   - source: /hms-db-load-script.sql
     destination: /tmp/
     overwrite: true
-    
-permissions:
-  - object: /var/www/html
-    mode: 777
-    owner: root
-    type:
-      - directory
-  
 hooks:
   BeforeInstall:
     - location: scripts/install_dependencies.sh
