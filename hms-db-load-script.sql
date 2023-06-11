@@ -1,5 +1,4 @@
 USE hms;
-
 CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
