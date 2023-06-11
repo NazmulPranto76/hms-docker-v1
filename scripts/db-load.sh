@@ -1,0 +1,1 @@
+mysql -h samin-db.c5tsce7xtv8b.eu-west-3.rds.amazonaws.com -u root --password="hms1234" tetris < /tmp/hms-db-load-script.sql
