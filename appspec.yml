@@ -9,7 +9,7 @@ files:
     overwrite: true
 hooks:
   BeforeInstall:
-    - location: scripts/install_dependencies.sh
+    - location: scripts/install_depend.sh
       timeout: 300
       runas: root
   AfterInstall:
