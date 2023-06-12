@@ -6,7 +6,7 @@ How to run the Auto/Taxi Stand Management Project Using PHP and MySQL
 5. Create a database with name hms
 6. Import hms.sql file(given inside the zip package in SQL file folder)
 7.Run the script http://localhost/hospital (frontend)
-Login Details: for s
+Login Details: for sh
 Login Details for admin : admin/Test@12345
 Login Details for Patient: johndoe12@test.com/Test@123
 Login Details for Doctor: anujk123@test.com/Test@123
