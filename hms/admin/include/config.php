@@ -1,5 +1,5 @@
 <?php
-define('DB_SERVER','naz-db.c5tsce7xtv8b.eu-west-3.rds.amazonaws.com');
+define('DB_SERVER','naz-db');
 define('DB_USER','root');
 define('DB_PASS' ,'bjit1234');
 define('DB_NAME', 'hms');
