@@ -1,0 +1,34 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:latest
+    container_name: naz-db
+    environment:
+      - MYSQL_ROOT_PASSWORD=bjit1234
+    restart: always
+    volumes:
+      - /home/nazmul_islam/Docker_Project/sql_backup:/var/lib/mysql
+    networks:
+      - naz-network
+
+  apache:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: naz-apache
+    ports:
+      - 8000:80
+    restart: always
+    volumes:
+      - /home/nazmul_islam/Docker_Project/hms-b:/var/www/html
+    networks:
+      - naz-network
+    depends_on:
+      - mysql
+
+networks:
+  naz-network:
+
+volumes:
+  sql_backup:
+  hms-b:
